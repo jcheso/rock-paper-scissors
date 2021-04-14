@@ -1,0 +1,39 @@
+body {
+    background-color: rgb(231, 204, 204);
+  }
+  h1 {
+    color: rgb(0, 0, 0);
+
+  }
+  p {
+    color: red;
+  }
+  .header{
+
+    justify-content: center;
+    align-items: center;
+  }
+  .box{
+      display:flex;
+      justify-content: center;
+      align-content: center;
+  }
+
+  .button-style{
+    padding: 5px;
+  }
+
+  .container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .result{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    
+  }
