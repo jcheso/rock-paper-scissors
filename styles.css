@@ -1,5 +1,6 @@
 body {
   background-color: rgb(231, 204, 204);
+
 }
 h1 {
   color: rgb(0, 0, 0);
@@ -26,7 +27,7 @@ p {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
+  height: 100vh;
 }
 
 .results.container {
@@ -47,6 +48,9 @@ p {
 .results {
   align-content: center;
   justify-content: center;
+  align-items: center;
   padding: 5px;
   font-size: medium;
+  height: 35px;
+  width: 200px;
 }

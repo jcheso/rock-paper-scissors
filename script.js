@@ -60,26 +60,40 @@ function playRound(playerSelection, result) {
 }
 
 function displayResult(result, playerScore, computerScore) {
-  const resultContainer = document.querySelector("#results-container");
-  
-  const resultBox = document.createElement('div');
-  resultBox.classList.add('result-box');
-  resultContainer.appendChild(resultBox);
+  const resultBox = document.querySelector("#result-box");
 
-  const resultContent = document.createElement("p");
-  resultContent.classList.add("results");
-  resultContent.textContent = result["message"];
-  resultBox.appendChild(resultContent);
+  if (resultBox == null) {
+    const resultContainer = document.querySelector("#results-container");
 
-  const resultPlayer = document.createElement("p");
-  resultPlayer.classList.add("results");
-  resultPlayer.textContent = "| Player Score: " + result["playerWins"];
-  resultBox.appendChild(resultPlayer);
+    const resultBox = document.createElement("div");
+    resultBox.classList.add("result-box");
+    resultBox.setAttribute("id", "result-box");
+    resultContainer.appendChild(resultBox);
 
-  const resultComputer = document.createElement("p");
-  resultComputer.classList.add("results");
-  resultComputer.textContent = "| User Score: " + result["computerWins"];
-  resultBox.appendChild(resultComputer);
+    const resultContent = document.createElement("p");
+    resultContent.classList.add("results");
+    resultContent.setAttribute("id", "result");
+    resultContent.textContent = result["message"];
+    resultBox.appendChild(resultContent);
+
+    const resultPlayer = document.createElement("p");
+    resultPlayer.classList.add("results");
+    resultPlayer.setAttribute("id", "player-score");
+    resultPlayer.textContent = "| Player Score: " + result["playerWins"];
+    resultBox.appendChild(resultPlayer);
+
+    const resultComputer = document.createElement("p");
+    resultComputer.classList.add("results");
+    resultComputer.setAttribute("id", "user-score");
+    resultComputer.textContent = "| User Score: " + result["computerWins"];
+    resultBox.appendChild(resultComputer);
+  } else {
+    document.getElementById("result").innerHTML = result["message"];
+    document.getElementById("player-score").innerHTML =
+      "| Player Score: " + result["playerWins"];
+    document.getElementById("user-score").innerHTML =
+      "| User Score: " + result["computerWins"];
+  }
 }
 
 // buttons is a node list. It looks and acts much like an array.
