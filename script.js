@@ -46,12 +46,12 @@ function playRound(playerSelection, result) {
   // Logic to check if there is a winner
   if (result["playerWins"] == 5) {
     result["message"] =
-      "Congratulations you reached 5 points first! Scores are reset";
+      "Winner, Winner, Chicken Dinner!";
     result["playerWins"] = 0;
     result["computerWins"] = 0;
   } else if (result["computerWins"] == 5) {
     result["message"] =
-      "Bad Luck the computer reached 5 points first! Scores are reset";
+      "You lose! Better luck next time";
     result["playerWins"] = 0;
     result["computerWins"] = 0;
   }
@@ -60,39 +60,46 @@ function playRound(playerSelection, result) {
 }
 
 function displayResult(result, playerScore, computerScore) {
-  const resultBox = document.querySelector("#result-box");
+  const resultBox = document.querySelector("#result");
 
   if (resultBox == null) {
     const resultContainer = document.querySelector("#results-container");
 
-    const resultBox = document.createElement("div");
-    resultBox.classList.add("result-box");
-    resultBox.setAttribute("id", "result-box");
-    resultContainer.appendChild(resultBox);
+    // const resultBox = document.createElement("div");
+    // resultBox.classList.add("result-box");
+    // resultBox.setAttribute("id", "result-box");
+    // resultContainer.appendChild(resultBox);
 
     const resultContent = document.createElement("p");
     resultContent.classList.add("results");
     resultContent.setAttribute("id", "result");
+    resultContent.setAttribute("class", "score");  
     resultContent.textContent = result["message"];
-    resultBox.appendChild(resultContent);
+    resultContainer.appendChild(resultContent);
 
-    const resultPlayer = document.createElement("p");
-    resultPlayer.classList.add("results");
-    resultPlayer.setAttribute("id", "player-score");
-    resultPlayer.textContent = "| Player Score: " + result["playerWins"];
-    resultBox.appendChild(resultPlayer);
+    // const resultPlayer = document.createElement("p");
+    // resultPlayer.classList.add("results");
+    // resultPlayer.setAttribute("id", "player-score");
+    // resultPlayer.setAttribute("class", "score");  
+    // resultPlayer.textContent = "Player Score: " + result["playerWins"];
+    // resultBox.appendChild(resultPlayer);
+    document.getElementById("player-score").innerHTML = result["playerWins"];
 
-    const resultComputer = document.createElement("p");
-    resultComputer.classList.add("results");
-    resultComputer.setAttribute("id", "user-score");
-    resultComputer.textContent = "| User Score: " + result["computerWins"];
-    resultBox.appendChild(resultComputer);
+    // const resultComputer = document.createElement("p");
+    // resultComputer.classList.add("results");
+    // resultComputer.setAttribute("id", "user-score");
+    // resultComputer.setAttribute("class", "score");    
+    // resultComputer.textContent = "User Score: " + result["computerWins"];
+    // resultBox.appendChild(resultComputer);
+
+    document.getElementById("computer-score").innerHTML = result["computerWins"];
+
   } else {
     document.getElementById("result").innerHTML = result["message"];
     document.getElementById("player-score").innerHTML =
-      "| Player Score: " + result["playerWins"];
+      result["playerWins"];
     document.getElementById("user-score").innerHTML =
-      "| User Score: " + result["computerWins"];
+      result["computerWins"];
   }
 }
 

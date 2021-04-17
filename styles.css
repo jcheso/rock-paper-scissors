@@ -1,12 +1,15 @@
 body {
-  background-color: rgb(231, 204, 204);
+  background-color: rgb(238, 238, 238);
 
 }
 h1 {
-  color: rgb(0, 0, 0);
+  color: rgb(12, 12, 12)
+}
+h2 {
+  color: rgb(54, 54, 54)
 }
 p {
-  color: rgb(0, 0, 0);
+  color: rgb(82, 82, 82)
 }
 .header {
   justify-content: center;
@@ -19,7 +22,14 @@ p {
 }
 
 .button-style {
-  padding: 5px;
+  padding: 15px;
+  border-radius: 10px;
+  margin: 15px;
+  width: 100px;
+  border-style: none;
+  text-transform: uppercase;
+  font-weight: 800;
+  color: rgb(12, 12, 12)
 }
 
 .container {
@@ -41,16 +51,48 @@ p {
   flex-direction: row;
   padding: 5px;
   margin: 10px;
-  border: solid;
-  border-color:indianred;
-  background-color:lightsalmon;
 }
-.results {
-  align-content: center;
-  justify-content: center;
-  align-items: center;
-  padding: 5px;
-  font-size: medium;
-  height: 35px;
-  width: 200px;
+
+.score{
+  padding: 15px;
+  margin: 50px;
+  border-style: solid;
+  border-color: rgb(255, 156, 106);
+  background-color: rgb(255, 215, 195);
+  border-radius: 12px;
+  text-align: center;
+  font-size: larger;
+  font-weight: 600;
+  color:rgb(12, 12, 12)
+}
+
+.content{
+  background-color: rgb(255, 255, 255);
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 2px 2px #c5c5c5;
+}
+
+.score-container{
+  display: flex;
+  padding: 20px;
+  justify-content: space-evenly;
+}
+
+.score-wrapper{
+  text-align: center;
+  padding:10px;
+}
+
+.score-title{
+  text-transform: uppercase;
+  font-weight: 700;
+  margin: 0px;
+}
+
+.score-result{
+  font-weight: 500;
+  font-size: 65px;
+  margin: 0px;
 }
